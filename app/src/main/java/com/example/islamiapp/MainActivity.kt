@@ -39,9 +39,16 @@ class MainActivity : AppCompatActivity() {
                     QuranFragment()
                 }
             }
+            pushFragment(fragment)
             true //ITEM SELECTED
         }
         viewBinding.content.bottomNav.selectedItemId=R.id.nav_quraan
+    }
+    private fun pushFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
     /*WithoutLambda
     *  private fun initViews(){

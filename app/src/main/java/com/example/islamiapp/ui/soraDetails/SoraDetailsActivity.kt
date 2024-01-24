@@ -41,9 +41,9 @@ class SoraDetailsActivity : AppCompatActivity() {
         viewBinding.soraContent.rvDetailsSora.adapter=versadapter
     }
 
-    override fun onNavigateUp(): Boolean { //backButton in actionBar
+    override fun onSupportNavigateUp(): Boolean {
         finish()
-        return super.onSupportNavigateUp()
+        return true
     }
 
 

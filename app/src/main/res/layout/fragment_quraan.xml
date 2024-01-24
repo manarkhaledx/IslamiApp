@@ -9,15 +9,15 @@
 
     <ImageView
         android:id="@+id/img_quraan_main"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:src="@drawable/quran_main_img"
-        android:adjustViewBounds="true"
+        android:layout_width="323dp"
+        android:layout_height="192dp"
         android:layout_marginTop="50dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/quran_main_img"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".2"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_sora"

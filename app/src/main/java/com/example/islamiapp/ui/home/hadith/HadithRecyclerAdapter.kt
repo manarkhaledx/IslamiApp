@@ -3,10 +3,10 @@ package com.example.islamiapp.ui.soraDetails
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.islamiapp.databinding.ItemSoraTitleBinding
 import com.example.islamiapp.databinding.ItemSoraVerseBinding
+import com.example.islamiapp.model.Hadith
 
-class VersesRecyclerAdapter(private val versesList: List<String>) : RecyclerView.Adapter<VersesRecyclerAdapter.ViewHolder>() {
+class HadithRecyclerAdapter(private val hadithList: List<Hadith>) : RecyclerView.Adapter<HadithRecyclerAdapter.ViewHolder>() {
 
 
 
@@ -17,18 +17,14 @@ class VersesRecyclerAdapter(private val versesList: List<String>) : RecyclerView
 
     }
 
-    override fun getItemCount(): Int = versesList.size
+    override fun getItemCount(): Int = hadithList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val title = versesList[position]
-        holder.bind(title)
+        val hadith = hadithList[position]
+        holder.bind(hadith.title)
 
         //check on specific variable null or not  , will enter let if not nullable
-        onItemClickListener?.let { listener ->
-            holder.itemView.setOnClickListener {
-                listener.onItemClick(title, position)
-            }
-        }
+//
 
     }
     var onItemClickListener:OnItemClickListener?=null
