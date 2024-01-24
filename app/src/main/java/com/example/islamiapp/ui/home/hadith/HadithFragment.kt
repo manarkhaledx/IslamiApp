@@ -1,5 +1,6 @@
 package com.example.islamiapp.ui.home.hadith
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.islamiapp.databinding.FragmentHadithBinding
 import com.example.islamiapp.model.Hadith
+import com.example.islamiapp.ui.Constants
+import com.example.islamiapp.ui.HadithDetails.HadithDetailsActivity
 import com.example.islamiapp.ui.soraDetails.HadithRecyclerAdapter
 
 
@@ -47,6 +50,16 @@ class HadithFragment: Fragment()  {
     val hadapter=HadithRecyclerAdapter(hadithList)
     fun showHadithList(hadithList:MutableList<Hadith>){
         viewBinding.rvHadiith.adapter=hadapter
+        hadapter.onItemClickListener = HadithRecyclerAdapter.OnItemClickListener { item, position ->
+            startHadithDetailScreen(item)
+        }
 
+
+    }
+
+    private fun startHadithDetailScreen(hadith: Hadith) {
+        val intent= Intent(activity, HadithDetailsActivity::class.java)
+        intent.putExtra(Constants.HadithEXTRA,hadith)
+        startActivity(intent)
     }
 }

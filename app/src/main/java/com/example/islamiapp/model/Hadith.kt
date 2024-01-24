@@ -1,4 +1,9 @@
 package com.example.islamiapp.model
 
-class Hadith(val title:String,val content:String) {
+import android.os.Parcelable
+import androidx.versionedparcelable.ParcelField
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+class Hadith(val title:String,val content:String) : Parcelable {
 }

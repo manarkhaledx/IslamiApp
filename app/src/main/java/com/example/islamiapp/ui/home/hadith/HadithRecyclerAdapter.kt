@@ -23,14 +23,17 @@ class HadithRecyclerAdapter(private val hadithList: List<Hadith>) : RecyclerView
         val hadith = hadithList[position]
         holder.bind(hadith.title)
 
-        //check on specific variable null or not  , will enter let if not nullable
-//
 
+        holder.itemView.setOnClickListener {
+            onItemClickListener?.onItemClick(hadith, position)
+        }
     }
+
     var onItemClickListener:OnItemClickListener?=null
-    fun interface OnItemClickListener{
-        fun onItemClick(item:String,position: Int)
+    fun interface OnItemClickListener {
+        fun onItemClick(hadith: Hadith, position: Int)
     }
+
 
     class ViewHolder(val itemBinding: ItemSoraVerseBinding) : RecyclerView.ViewHolder(itemBinding.root){
         fun bind(title:String){
