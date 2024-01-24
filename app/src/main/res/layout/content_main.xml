@@ -6,27 +6,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="@layout/activity_main">
 
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
         app:layout_constraintTop_toTopOf="parent"
-
-        />
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primaryColor"
+        app:menu="@menu/home_buttom_nav"
         app:itemActiveIndicatorStyle="@color/transparent"
         app:itemTextColor="@color/home_bottom_nav_selector"
         app:itemIconTint="@color/home_bottom_nav_selector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/home_buttom_nav"
-        app:layout_constraintTop_toTopOf="@id/fragment_container"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@ class SoraRecyclerAdapter(private val soraList: List<String>) : RecyclerView.Ada
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val title = soraList[position]
-        holder.itemBinding.title.text = title
+        holder.bind(title)
 
         //check on specific variable null or not  , will enter let if not nullable
         onItemClickListener?.let { listener ->
@@ -41,6 +41,11 @@ class SoraRecyclerAdapter(private val soraList: List<String>) : RecyclerView.Ada
         fun onItemClick(item:String,position: Int)
     }
 
-    class ViewHolder(val itemBinding: ItemSoraTitleBinding) : RecyclerView.ViewHolder(itemBinding.root)
+    class ViewHolder(private val itemBinding: ItemSoraTitleBinding) :
+        RecyclerView.ViewHolder(itemBinding.root) {
+        fun bind(title: String) {
+            itemBinding.title.text = title
+        }
+    }
 
 }
