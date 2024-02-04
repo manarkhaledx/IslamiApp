@@ -8,7 +8,7 @@ import com.example.islamiapp.ui.Constants
 class SoraDetailsActivity : AppCompatActivity() {
     var soraIndex:Int=0
     lateinit var soraTitle:String
-    lateinit var viewBinding: ActivitySoraDetailsBinding
+    lateinit var viewBinding:ActivitySoraDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding=ActivitySoraDetailsBinding.inflate(layoutInflater)
